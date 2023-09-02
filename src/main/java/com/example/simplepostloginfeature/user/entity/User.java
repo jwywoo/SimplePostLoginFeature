@@ -1,4 +1,4 @@
-package com.example.simplepostloginfeature.entity;
+package com.example.simplepostloginfeature.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

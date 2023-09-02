@@ -1,6 +1,6 @@
-package com.example.simplepostloginfeature.entity;
+package com.example.simplepostloginfeature.board.entity;
 
-import com.example.simplepostloginfeature.dto.BoardRequestDto;
+import com.example.simplepostloginfeature.board.dto.BoardRequestDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

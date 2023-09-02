@@ -1,6 +1,6 @@
-package com.example.simplepostloginfeature.dto;
+package com.example.simplepostloginfeature.board.dto;
 
-import com.example.simplepostloginfeature.entity.Board;
+import com.example.simplepostloginfeature.board.entity.Board;
 import lombok.Getter;
 
 @Getter

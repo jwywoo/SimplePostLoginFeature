@@ -1,4 +1,4 @@
-package com.example.simplepostloginfeature.dto;
+package com.example.simplepostloginfeature.board.dto;
 
 import lombok.Getter;
 
