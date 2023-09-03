@@ -6,12 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="board")
+@Table(name = "board")
 @Getter
 @NoArgsConstructor
-public class Board {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Board extends Timestamped {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "title", nullable = false, length = 500)
     private String title;
