@@ -4,6 +4,9 @@ package com.example.simplepostloginfeature.board.controller;
 import com.example.simplepostloginfeature.board.dto.BoardRequestDto;
 import com.example.simplepostloginfeature.board.dto.BoardResponseDto;
 import com.example.simplepostloginfeature.board.service.BoardService;
+import com.example.simplepostloginfeature.user.dto.StringResponseDto;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,31 +23,31 @@ public class BoardController {
     // Get
     // Get all
     @GetMapping("/board")
-    public List<BoardResponseDto> boardList() {
-        return null;
+    public ResponseEntity<List<BoardResponseDto>> boardList() {
+        return ResponseEntity.ok(boardService.boardList());
     }
 
     // Get single
     @GetMapping("/board/{id}")
-    public BoardResponseDto boardDetail(@PathVariable Long id) {
-        return null;
+    public ResponseEntity<BoardResponseDto> boardDetail(@PathVariable Long id) {
+        return ResponseEntity.ok(boardService.boardDetail(id));
     }
 
     // Create -> authorization required (Request Header)
     @PostMapping("/board")
-    public BoardResponseDto boardCreate(@RequestBody BoardRequestDto boardRequestDto) {
-        return null;
+    public ResponseEntity<BoardResponseDto> boardCreate(@RequestBody BoardRequestDto requestDto, HttpServletRequest req) {
+        return ResponseEntity.ok(boardService.boardCreate(requestDto, req));
     }
 
     // Update -> authorization required (Request Header)
     @PutMapping("/board/{id}")
-    public BoardResponseDto boardUpdate(@PathVariable Long id, @RequestBody BoardRequestDto boardRequestDto) {
-        return null;
+    public ResponseEntity<BoardResponseDto> boardUpdate(@PathVariable Long id, @RequestBody BoardRequestDto requestDto, HttpServletRequest req) {
+        return ResponseEntity.ok(boardService.boardUpdate(id,requestDto, req));
     }
 
     // Delete -> authorization required (Request Header)
     @DeleteMapping("/board/{id}")
-    public BoardResponseDto boardDelete(@PathVariable Long id) {
-        return null;
+    public ResponseEntity<StringResponseDto> boardDelete(@PathVariable Long id, HttpServletRequest req) {
+        return ResponseEntity.ok(boardService.boardDelete(id, req));
     }
 }
